@@ -6,7 +6,7 @@ Aplica reverse() para invertir su orden.
 Vuelve a imprimir la lista.
 '''
 import modules.controlScreen as cs
-import modules.validateData as vd
+
 
 cs.deleteScreen()
 
