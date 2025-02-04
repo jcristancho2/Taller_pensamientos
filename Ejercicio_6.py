@@ -17,9 +17,8 @@ def limpiar_lista(datos):
 datos = ['manzana','perra', 'perro', 'coco', 'casa']
 print(datos)
 
+limpiar_lista(datos)
 
-# datos.clear()
-# print(datos)
 
 
     

@@ -15,13 +15,19 @@
 '''
 
 import modules.controlScreen as cs
-import modules.validateData as vd
-
 cs.deleteScreen()
 
-colores_varios = ["rojo", "azul", "verde", "amarillo", "negro"]
+while True:
+    cs.deleteScreen()
 
-new_color = input('Ingrese un nuevo Color -> ').split()
+    colores_varios = ["rojo", "azul", "verde", "amarillo", "negro"]
 
-#while True:
-#    try:
+    new_color = input('Ingrese un nuevo Color -> ').strip().lower()
+
+    try:
+        lista = colores_varios.index(new_color)
+        print(f'el color {new_color} \nse encuentra en la posicion {lista}')
+    except ValueError:
+        print(f' el color {new_color} no esta en la lista')
+            
+    cs.pauseScreen()        

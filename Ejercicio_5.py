@@ -22,24 +22,25 @@
 import modules.controlScreen as cs
 import modules.validateData as vd
 
+
 cs.deleteScreen()
 numeros = list(range(1, 6))
 
 print(f'uso de la funcion pop \nlista de numeros {numeros}\n')
-
-menu = vd.validateInt(f'[1]Hacer pop sin índice (pop al final) \n[2]Hacer pop con índice \n[3]salir \n ->')
-
 while True:
+    menu = vd.validateInt(f'[1]Hacer pop sin índice (pop al final) \n[2]Hacer pop con índice \n[3]salir \n ->')
     match menu:
         case 1:
             print(f'el numero removido -> {numeros.pop()}')       
         case 2:
-            print(f'el numero removido indice 3 -> {numeros.pop(3)}')
+            indice = int(vd.validateAlnum('ingrese el indice para remover -> '))
+            if len(numeros)>indice:
+                print(f'el numero removido indice -> {numeros.pop(indice)}')
+            else:
+                print('no hay suficientes elementos en la lista para el indice deseado')
         case 3:
             break
         case _:
             print('opcion no valida')
-        
-    
 
 cs.pauseScreen()
