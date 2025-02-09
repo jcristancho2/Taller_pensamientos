@@ -13,9 +13,14 @@
 """
 import modules.validateData as vd , modules.controlScreen as cc
 
+def buscar_personas(list_nombre,buscar):
+    buscar = buscar.lower()
+    for nombr in list_nombre:
+        if buscar in nombr.lower():
+            print(nombr)
+    
+
 nombres = ['carlos', 'maría', 'jorge', 'ana', 'camila', 'david', 'paula','josé', 'diana', 'alejandro', 'verónica']
-
-nombre = vd.validateAlpha('ingrese el nombre o parte del nombre que desea buscar /->> ')
-
-def buscar_personas():
-    pass
+cc.deleteScreen()
+nombre = vd.validateAlpha('ingrese el nombre o parte del nombre que desea buscar /->> ')    
+buscar_personas(nombres, nombre)
